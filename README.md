@@ -68,7 +68,7 @@ python eval.py -e log_XXXX_mit_XX/checkpoint/epoch-XXX.ph -d 0
  SUNGRGBD
  ``` 
 ### 🧪數據
-###MFNet
+#### MFNet
 | 模型名稱     | Backbone | 參數量 (M) | FLOPs (G) | mIoU (%) |
 |--------------|----------|------------|-----------|----------|
 | CMX-B2       | MiT-B2   | 66.57       | 78.32      | 58.2     |
