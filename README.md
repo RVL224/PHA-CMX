@@ -50,23 +50,21 @@ pip install -r requirements.txt
 bash run.sh
  ``` 
 
-訓練結果將儲存在：
- ``` 
-EXP/TB/：TensorBoard 日誌
 
-EXP/checkpoint/：Checkpoint 模型
-
-EXP/logs/：執行紀錄
  ``` 
 ### 📊 評估流程 執行以下指令可自動針對每 25 個 epoch 從第 300 開始評估：
  ``` 
-python eval.py -e EXP/run_xxx/checkpoint/ -p EXP/run_xxx/Miou/ -d 0
+python eval.py -e log_XXXX_mit_XX/checkpoint/epoch-XXX.ph -d 0
  ``` 
 ### 🧪 支援資料集
  ``` 
  NYUv2
 
  MFNet
+
+ PST900
+
+ SUNGRGBD
  ``` 
 
 ### 🙌 貢獻者（Contributors） 主作者：Sheng（Project Maintainer） 指導單位：淡江大學電機系RVL Chi-Yi Tsai
