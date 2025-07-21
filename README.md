@@ -7,8 +7,8 @@ PHA-CMX 結合以下三大核心模組：
 
 - **Dynamic Cross-Attention (DCA)**：進行雙模態互補特徵交叉學習，並透過 Gate MLP 控制信息通道。
 - **Parallel Hybrid Attention (PHA)**：整合 CoordAttention 與 ShiftViTBlockv2，強化低階與中階特徵的語義引導。
-- 
-- 
+  
+
 
 
 ### 📁 Datasets結構
@@ -66,6 +66,15 @@ python eval.py -e log_XXXX_mit_XX/checkpoint/epoch-XXX.ph -d 0
 
  SUNGRGBD
  ``` 
+### 🧪數據
+
+| 模型名稱   | 參數量 (M) | FLOPs (G) | mIoU (%) |
+|------------|------------|-----------|----------|
+| CMX-B2     | 28.7       | 70.3      | 58.2     |
+| PHA-CMX-B2 | 29.1       | 72.8      | 59.7     |
+| PHA-CMX-B4 | 63.2       | 139.4     | 61.3     |
+
+
 
 ### 🙌 貢獻者（Contributors） 主作者：Sheng（Project Maintainer） 指導單位：淡江大學電機系RVL Chi-Yi Tsai
 
