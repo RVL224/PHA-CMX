@@ -46,12 +46,13 @@ pip install -r requirements.txt
 
 預訓練 
 [pretrained segformer](https://drive.google.com/drive/folders/10XgSW8f7ghRs9fJ0dE-EV8G2E_guVsT5).
+
  ``` 
 bash run.sh
  ``` 
 
 
- ``` 
+
 ### 📊 評估流程 執行以下指令可自動針對每 25 個 epoch 從第 300 開始評估：
  ``` 
 python eval.py -e log_XXXX_mit_XX/checkpoint/epoch-XXX.ph -d 0
@@ -73,7 +74,7 @@ python eval.py -e log_XXXX_mit_XX/checkpoint/epoch-XXX.ph -d 0
 | CMX-B2     | 28.7       | 70.3      | 58.2     |
 | PHA-CMX-B2 | 29.1       | 72.8      | 59.7     |
 | PHA-CMX-B4 | 63.2       | 139.4     | 61.3     |
-
+ ``` 
 
 ### 🙌 貢獻者（Contributors） 主作者：Sheng（Project Maintainer） 指導單位：淡江大學電機系RVL Chi-Yi Tsai
 
