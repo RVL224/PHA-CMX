@@ -76,10 +76,10 @@ python eval.py -e log_XXXX_mit_XX/checkpoint/epoch-XXX.ph -d 0
 | PHA-CMX-B4   | MiT-B4   | 61.3     |
 #### SUNRGBD
 | 模型名稱     | Backbone | mIoU (%) |
-|-------------|----------|----------|
-| CMX-B2       | MiT-B2   | 58.2     |
-| PHA-CMX-B2   | MiT-B2   | 59.7     |
-| PHA-CMX-B4   | MiT-B4   | 61.3     |
+|-------------|-----------|----------|
+| CMX-B2       | MiT-B2   | 49.7     |
+| PHA-CMX-B2   | MiT-B2   | 50.8     |
+| PHA-CMX-B4   | MiT-B4   | 51.4     |
 
 
 
