@@ -1,11 +1,11 @@
 # PHA-CMX: Hybrid Attention for RGB-X Semantic Segmentation
-本專案為一個多模態語義分割模型 **HA-CMX (Hybrid Attention-CMX)**，專為處理 **RGB-X**（如 RGB-D、RGB-T）場景中的語義分割任務所設計。該模型融合多種注意力機制，強化模態互補性與語義對齊能力，在多種資料集（如 NYUv2、MFNet）上展現優異性能。
+本專案為一個多模態語義分割模型 **PHA-CMX (Parallel Hybrid Attention-CMX)**，專為處理 **RGB-X**（如 RGB-D、RGB-T）場景中的語義分割任務所設計。該模型融合多種注意力機制，強化模態互補性與語義對齊能力，在多種資料集（如 NYUv2、MFNet）上展現優異性能。
 
 ## 🧠 模型架構簡介
 
 PHA-CMX 結合以下三大核心模組：
 
-- **Dynamic Cross-Attention (DCA)**：進行雙模態互補特徵交叉學習，並透過 Gate MLP 控制信息通道。
+- **Dynamic Feature Fusion (DFFM)**：進行雙模態互補特徵交叉學習，並透過 Gate MLP 控制信息通道。
 - **Parallel Hybrid Attention (PHA)**：整合 CoordAttention 與 ShiftViTBlockv2，強化低階與中階特徵的語義引導。
   
 
@@ -69,11 +69,18 @@ python eval.py -e log_XXXX_mit_XX/checkpoint/epoch-XXX.ph -d 0
  ``` 
 ### 🧪數據
 #### MFNet
-| 模型名稱     | Backbone | 參數量 (M) | FLOPs (G) | mIoU (%) |
-|--------------|----------|------------|-----------|----------|
-| CMX-B2       | MiT-B2   | 66.57       | 78.32      | 58.2     |
-| PHA-CMX-B2   | MiT-B2   | 77.09       | 83.30      | 59.7     |
-| PHA-CMX-B4   | MiT-B4   | 150.38       | 163.27     | 61.3     |
+| 模型名稱     | Backbone | mIoU (%) |
+|--------------|----------|----------|
+| CMX-B2       | MiT-B2   | 58.2     |
+| PHA-CMX-B2   | MiT-B2   | 59.7     |
+| PHA-CMX-B4   | MiT-B4   | 61.3     |
+#### SUNRGBD
+| 模型名稱     | Backbone || mIoU (%) |
+|--------------|----------|-----------|
+| CMX-B2       | MiT-B2   | 58.2     |
+| PHA-CMX-B2   | MiT-B2   | 59.7     |
+| PHA-CMX-B4   | MiT-B4   | 61.3     |
+
 
 
 ### 🙌 貢獻者（Contributors） 主作者：Sheng（Project Maintainer） 指導單位：淡江大學電機系RVL Chi-Yi Tsai
