@@ -1,13 +1,13 @@
-# HA-CMX: Hybrid Attention for RGB-X Semantic Segmentation
+# PHA-CMX: Hybrid Attention for RGB-X Semantic Segmentation
 本專案為一個多模態語義分割模型 **HA-CMX (Hybrid Attention-CMX)**，專為處理 **RGB-X**（如 RGB-D、RGB-T）場景中的語義分割任務所設計。該模型融合多種注意力機制，強化模態互補性與語義對齊能力，在多種資料集（如 NYUv2、MFNet）上展現優異性能。
 
 ## 🧠 模型架構簡介
 
-HA-CMX 結合以下三大核心模組：
+PHA-CMX 結合以下三大核心模組：
 
 - **Dynamic Cross-Attention (DCA)**：進行雙模態互補特徵交叉學習，並透過 Gate MLP 控制信息通道。
 - **Parallel Hybrid Attention (PHA)**：整合 CoordAttention 與 ShiftViTBlockv2，強化低階與中階特徵的語義引導。
-- **Shift-based Hybrid Attention (SHA)**：應用於 Decoder Head，提升最終融合特徵的結構與邊界辨識能力。
+- 
 - 
 
 
