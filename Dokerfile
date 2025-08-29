@@ -1,0 +1,45 @@
+# Base versions
+ARG PYTORCH="1.13.1"
+ARG CUDA="11.6"
+ARG CUDNN="8"
+
+FROM pytorch/pytorch:${PYTORCH}-cuda${CUDA}-cudnn${CUDNN}-devel
+
+# 避免互動式安裝
+ENV DEBIAN_FRONTEND=noninteractive
+
+# 建議：如只跑 20/30/40 系列，可縮短架構清單
+ENV TORCH_CUDA_ARCH_LIST="7.5 8.0 8.6 8.9+PTX" \
+    TORCH_NVCC_FLAGS="-Xfatbin -compress-all" \
+    CMAKE_PREFIX_PATH="$(dirname $(which conda))/../" \
+    FORCE_CUDA="1" \
+    PYTHONUNBUFFERED=1
+
+# 系統套件
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    python3-dev python3-pip git git-lfs vim make cmake pkg-config build-essential \
+    ffmpeg libsm6 libxext6 libxrender-dev libglib2.0-0 ninja-build \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
+
+# Python 套件（不重裝 torch/torchvision，避免覆蓋 GPU 版）
+RUN python3 -m pip install --upgrade pip --no-cache-dir && \
+    pip install --no-cache-dir \
+      numpy==1.23.5 \
+      timm==0.6.13 \
+      easydict \
+      yacs \
+      opencv-python-headless \
+      tensorboard \
+      tensorboardX \
+      scikit-image \
+      matplotlib \
+      jupyterlab \
+      notebook && \
+    rm -rf /root/.cache/pip
+
+# （選用）OpenMMLab，如需要再打開以下兩行
+# RUN pip install --no-cache-dir openmim
+# RUN mim install "mmengine>=0.7.1" "mmcv>=2.0.0rc4"
+
+WORKDIR /workspace/RGBX
