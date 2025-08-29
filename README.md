@@ -38,10 +38,7 @@ Python ≥ 3.7
 PyTorch ≥ 1.10
 CUDA ≥ 11.1
 ``` 
-安裝依賴套件：
- ``` 
-pip install -r requirements.txt
- ``` 
+
 ### 🏋️‍♀️ 訓練流程 請使用以下指令開始訓練：
 
 預訓練 
