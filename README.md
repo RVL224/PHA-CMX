@@ -52,7 +52,7 @@ bash run.sh
 
 ### 📊 評估流程 ：
  ``` 
-python eval.py -e log_XXXX_mit_XX/checkpoint/epoch-XXX.ph -d 0
+python eval.py -e log_XXXX_mit_XX/checkpoint/epoch-XXX.pth -d 0
  ``` 
 ### 🧪 支援資料集
  ``` 
