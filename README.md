@@ -1,17 +1,20 @@
 # PHA-CMX: Hybrid Attention for RGB-X Semantic Segmentation
-本專案為一個多模態語義分割模型 **PHA-CMX (Parallel Hybrid Attention-CMX)**，專為處理 **RGB-X**（如 RGB-D、RGB-T）場景中的語義分割任務所設計。該模型融合多種注意力機制，強化模態互補性與語義對齊能力，在多種資料集（如 NYUv2、MFNet）上展現優異性能。
 
-## 🧠 模型架構簡介
+This repo implements a multimodal semantic segmentation model, **PHA-CMX (Parallel Hybrid Attention-CMX)**, specifically designed for semantic segmentation tasks in **RGB-X** (such as RGB-D and RGB-T) scenes. This model integrates multiple attention mechanisms to enhance modal complementarity and semantic alignment capabilities, demonstrating excellent performance on various datasets (such as NYUv2 and MFNet).
 
-PHA-CMX 結合以下三大核心模組：
+Related research findings have been published in the following papers:
+Chi-Yi Tsai and Dao-Sheng Du, "PHA-CMX: Parallel Hybrid Attention with Dynamic Cross-Attention for Multimodal Semantic Segmentation," The Visual Computer, under review.
 
-- **Dynamic Feature Fusion (DFFM)**：進行雙模態互補特徵交叉學習，並透過 Gate MLP 控制信息通道。
-- **Parallel Hybrid Attention (PHA)**：整合 CoordAttention 與 ShiftViTBlockv2，強化低階與中階特徵的語義引導。
+Please cite this article if you use our work in your research.
+
+## 🧠 Model Architecture Introduction
+
+PHA-CMX combines the following two core modules:
+
+- **Dynamic Feature Fusion (DFF)**：Performs bimodal complementary feature cross-learning and controls the information channels through GateMLP.
+- **Parallel Hybrid Attention (PHA)**：Integrates CoordAttention and ShiftViTBlockv2 to enhance the semantic guidance of low- and mid-level features.
   
-
-
-
-### 📁 Datasets結構
+### 📁 Datasets structure
  ``` 
 <datasets>
 |-- <DatasetName1>
@@ -32,58 +35,45 @@ PHA-CMX 結合以下三大核心模組：
 |-- <DatasetName2>
 |-- ...
  ``` 
-### 🚀 安裝與環境需求
+### 🚀 Installation and Environmental Requirements
 ``` 
 Python ≥ 3.7
 PyTorch ≥ 1.10
 CUDA ≥ 11.1
 ``` 
 
-### 🏋️‍♀️ 訓練流程 請使用以下指令開始訓練：
+### 🏋️‍♀️ Training Procedure - Please use the following instructions to begin training:
 
-預訓練 
+Pre-training 
 [pretrained segformer](https://drive.google.com/drive/folders/10XgSW8f7ghRs9fJ0dE-EV8G2E_guVsT5).
 
  ``` 
 bash run.sh
  ``` 
-
-
-
-### 📊 評估流程 ：
+### 📊 Evaluation process:
  ``` 
 python eval.py -e log_XXXX_mit_XX/checkpoint/epoch-XXX.pth -d 0
  ``` 
-### 🧪 支援資料集
- ``` 
- NYUv2
-
- MFNet
-
- PST900
-
- SUNGRGBD
- ``` 
-### 🧪數據
+### 🧪 Datasets:
+ [MFNet](https://www.mi.t.u-tokyo.ac.jp/static/projects/mil_multispectral/)
+ [PST900](https://github.com/ShreyasSkandanS/pst900_thermal_rgb)
+ [SUNGRGBD](https://rgbd.cs.princeton.edu/)
+ 
+### 🧪Experimental data
 #### MFNet
-| 模型名稱     | Backbone | mIoU (%) |
+| Model        | Backbone | mIoU (%) |
 |--------------|----------|----------|
 | CMX-B2       | MiT-B2   | 58.2     |
 | PHA-CMX-B2   | MiT-B2   | 59.7     |
 | PHA-CMX-B4   | MiT-B4   | 61.3     |
 #### SUNRGBD
-| 模型名稱     | Backbone | mIoU (%) |
-|-------------|-----------|----------|
+| Model        | Backbone | mIoU (%) |
+|--------------|----------|----------|
 | CMX-B2       | MiT-B2   | 49.7     |
 | PHA-CMX-B2   | MiT-B2   | 50.8     |
 
-
-
-
-### 🙌 貢獻者（Contributors） 主作者：Sheng（Project Maintainer） 指導單位：淡江大學電機系RVL Chi-Yi Tsai
-
-### 📚 致謝與引用（Credits）
-本專案基於以下開源專案進行改寫與擴充：
+### 📚 Acknowledgments and Citations（Credits）
+This repo is based on and expanded upon the following open-source project:
 
 - [RGBX_Semantic_Segmentation (by huaaaliu)](https://github.com/huaaaliu/RGBX_Semantic_Segmentation)
-感謝原作者釋出代碼，作為本模型的基礎架構參考。
+Thanks to the original author for releasing the code as the basic architecture reference for this model.
