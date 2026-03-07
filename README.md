@@ -1,13 +1,13 @@
 # PHA-CMX: Hybrid Attention for RGB-X Semantic Segmentation
 
 This repo implements a multimodal semantic segmentation model, **PHA-CMX (Parallel Hybrid Attention-CMX)**, specifically designed for semantic segmentation tasks in **RGB-X** (such as RGB-D and RGB-T) scenes. This model integrates multiple attention mechanisms to enhance modal complementarity and semantic alignment capabilities, demonstrating excellent performance on various datasets (such as SUNGRGBD and MFNet).
-  ``` 
+  
 Related research findings have been published in the following papers:
 
 Chi-Yi Tsai and Dao-Sheng Du, "PHA-CMX: Parallel Hybrid Attention with Dynamic Cross-Attention for Multimodal Semantic Segmentation," The Visual Computer, under review.
 
 Please cite this article if you use our work in your research.
-  ``` 
+  
 ## 🧠 Model Architecture Introduction
 
 PHA-CMX combines the following two core modules:
