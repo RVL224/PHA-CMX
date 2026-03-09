@@ -4,7 +4,7 @@ This repo implements a multimodal semantic segmentation model, **PHA-CMX (Parall
   
 Related research findings have been published in the following papers:
 
-Chi-Yi Tsai and Dao-Sheng Du, "PHA-CMX: Parallel Hybrid Attention with Dynamic Cross-Attention for Multimodal Semantic Segmentation," The Visual Computer, under review.
+Chi-Yi Tsai and Dao-Sheng Du, "PHA-CMX: Parallel Hybrid Attention with Dynamic Cross-Attention for Multimodal Semantic Segmentation," Under review.
 
 Please cite this article if you use our work in your research.
   
