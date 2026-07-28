@@ -67,6 +67,11 @@ python eval.py -e log_XXXX_mit_XX/checkpoint/epoch-XXX.pth -d 0
 | CMX-B2       | MiT-B2   | 58.2     |
 | PHA-CMX-B2   | MiT-B2   | 59.7     |
 | PHA-CMX-B4   | MiT-B4   | 61.3     |
+#### PST900
+| Model        | Backbone | mIoU (%) |
+|--------------|----------|----------|
+| PHA-CMX-B2   | MiT-B2   | 82.4     |
+| PHA-CMX-B4   | MiT-B4   | 83.6     |
 #### SUNRGBD
 | Model        | Backbone | mIoU (%) |
 |--------------|----------|----------|
