@@ -70,6 +70,7 @@ python eval.py -e log_XXXX_mit_XX/checkpoint/epoch-XXX.pth -d 0
 #### PST900
 | Model        | Backbone | mIoU (%) |
 |--------------|----------|----------|
+| SpiderMesh   | ResNet152| 82.3     |
 | PHA-CMX-B2   | MiT-B2   | 82.4     |
 | PHA-CMX-B4   | MiT-B4   | 83.6     |
 #### SUNRGBD
